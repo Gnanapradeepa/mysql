@@ -1,0 +1,48 @@
+//create a database
+create database pradee;
+use pradee;
+//created a table
+CREATE TABLE employee(ID varchar(10) PRIMARY KEY,name varchar(20),age int(5),address varchar(50),salary varchar(7));
+//inserted the values
+insert into employee values('1','ramesh',32,'Ahmedabad','2000');
+insert into employee values('2','Khilan',25,'Delhi ','1500');
+insert into employee values('3','kaushik',23,'kota','2000');
+insert into employee values('4','Chaitali',25,'mumbai','6500');
+insert into employee values('5','Hardik',27,'bhopal','8500');
+insert into employee values('6','Komal',22,'mp','45000');
+insert into employee values('7','Muffy',24,'indore','10000');
+//view the values
+select * from employee;
+//select command and where clause
+select name from employee where age >=24;
+//update command
+update employee set address='maharastra' where name='komal';
+select * from employee;
+//aggregate functions
+select count(*) from employee;
+select sum(age) from employee;
+//order by commands
+select name from employee order by name desc;
+
+use pradee;
+CREATE TABLE students(SID varchar(10) PRIMARY KEY,name varchar(20),clgname varchar(20) NOT NULL,age int(5),courses varchar(50),ID varchar(10),foreign key (ID) REFERENCES employee(ID));
+DESC students;
+insert into students values('S01','pradee','skcet',20,'ece','1');
+insert into students values('S02','sri','skct',21,'it','3');
+insert into students values('S03','sri','skc',22,'eee','2');
+select * from students;
+select name from students where id=1;
+select distinct(name) from students;
+show databases;
+show tables;
+//alter commands
+alter table students add column mo_no varchar(10);
+
+desc students;
+//truncate the table
+truncate table students;
+select * from students;
+//drop the table
+drop table students;
+
+
