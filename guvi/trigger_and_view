@@ -1,0 +1,57 @@
+create table employee(id int primary key not null auto_increment,name varchar(20),lname varchar(30),age int);
+
+
+ CREATE TABLE info(
+    name  VARCHAR(15) NOT NULL,
+    lname varchar(20),
+    age int,
+    username    VARCHAR(40) NOT NULL,
+    modified_time TIMESTAMP
+  );
+  create trigger pradee before insert on employee for each row insert into info values(new.name,new.lname,new.age,user(),now());
+  select * from employee;
+  select * from info;
+  insert into employee (name,lname,age) values('pradee','v',20);
+  insert into employee (name,lname,age) values('sri','m',21);
+insert into employee (name,lname,age) values('jai','p',22);
+select * from employee;
+  select * from info;
+  CREATE TRIGGER updt_trigger BEFORE UPDATE ON employee FOR EACH ROW insert into info values(new.name,new.lname,new.age,user(),now());
+  update employee set lname = 'xxx';
+  select * from employee;
+  select * from info;
+  
+  CREATE TRIGGER del_trigger BEFORE DELETE ON employee FOR EACH ROW DELETE FROM info where name = OLD.name;
+ 
+  select * from info;
+ 
+  select * from employee;
+  DELETE FROM employee where name = 'sri';
+   select * from employee;
+  select * from info;
+  
+  
+  create index gp on employee(name);
+  select * from employee;
+  
+  create view vgp as select * from employee;
+  select * from vgp;
+   update vgp set name='sri' where age=22;
+    select * from vgp;
+  ALTER VIEW vgp AS SELECT name FROM employee WHERE age =20 ;
+   select * from vgp;
+   
+   drop view vgp;
+ 
+   
+     
+ 
+  
+  
+  
+  
+ 
+  
+  
+ 
+  
