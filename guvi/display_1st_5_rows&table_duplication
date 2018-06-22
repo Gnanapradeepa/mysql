@@ -1,0 +1,24 @@
+create table employee(id int primary key not null,name varchar(20),lname varchar(30),age int);
+insert into employee (id,name,lname,age) values(1,'pradee','v',20);
+insert into employee (id,name,lname,age) values(2,'sri','m',21);
+insert into employee (id,name,lname,age) values(3,'jai','p',22);
+insert into employee (id,name,lname,age) values(4,'jai','p',23);
+insert into employee (id,name,lname,age) values(5,'xx','d',24);
+insert into employee (id,name,lname,age) values(6,'gjh','ph',27);
+insert into employee (id,name,lname,age) values(7,'vgh','pj',28);
+insert into employee (id,name,lname,age) values(8,'jhg','pi',22);
+insert into employee (id,name,lname,age) values(9,'jjl','pi',23);
+SELECT *FROM employee LIMIT 5; 
+SELECT * FROM employee WHERE id > (SELECT count(id)-5 FROM employee);
+select * from(select * from employee order by id desc limit 5) sub order by id asc;
+select * from employee;
+create table student as select * from employee;
+
+
+
+
+ 
+  
+  
+ 
+  
