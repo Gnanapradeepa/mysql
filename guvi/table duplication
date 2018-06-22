@@ -1,0 +1,6 @@
+create table employee(id int primary key not null auto_increment,name varchar(20),lname varchar(30),age int);
+insert into employee (name,lname,age) values('pradee','v',20);
+insert into employee (name,lname,age) values('sri','m',21);
+insert into employee (name,lname,age) values('jai','p',22);
+select * from employee;
+create table student as select * from employee;
