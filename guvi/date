@@ -1,0 +1,7 @@
+https://www.w3resource.com/mysql/date-and-time-functions/mysql-date_format-function.php
+select curdate();
+SELECT SUBDATE("2018-01-22", INTERVAL 2 MONTH);
+SELECT DATE_FORMAT(CURDATE(), '%d/%m/%Y');
+
+SELECT DATE_FORMAT(curdate(),  '%b%d,%Y');
+select str_to_date(concat(12,31,extract(year from curdate())),'%m%d%Y');
